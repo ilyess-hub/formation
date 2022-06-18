@@ -1,0 +1,27 @@
+<table class="table">
+    <tr>
+        <th>id</th>
+        <th>scoreOne</th>
+        <th>scoreTwo</th>
+        <th>teamOne</th>
+        <th>teamTwo</th>
+        <th>actions</th>
+    
+    </tr>
+    <tr *ngFor="let p of matches">
+        <th>{{p.id}}</th>
+        <td>{{p.scoreOne}}</td>
+        <td>{{p.scoreTwo}}</td>
+        <td>{{p.teamOne  | uppercase}}</td>
+        <td>{{p.teamTwo | asterix}}</td>
+        <td>
+            <button type="button" class="btn btn-info" (click)="goToDisplay(p.id)" >Display</button>
+            <button type="button" class="btn btn-warnig" (click)="goToEdit(p.id)" >Edit</button>
+            <button type="button" class="btn btn-danger">Delete</button>
+        </td>
+    
+    
+    </tr>
+    
+    
+    </table>

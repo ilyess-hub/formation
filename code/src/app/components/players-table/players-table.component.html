@@ -1,0 +1,25 @@
+<table class="table">
+<tr>
+    <th>id</th>
+    <th>name</th>
+    <th>position</th>
+    <th>nbr</th>
+    <th>actions</th>
+
+</tr>
+<tr *ngFor="let p of players">
+    <td>{{p.id}}</td>
+    <td>{{p.name}}</td>
+    <td>{{p.position}}</td>
+    <td>{{p.nbr}}</td>
+    <td>
+        <button type="button" class="btn btn-info">Display</button>
+        <button type="button" class="btn btn-warnig">Edit</button>
+        <button type="button" class="btn btn-danger">Delete</button>
+    </td>
+
+
+</tr>
+
+
+</table>
