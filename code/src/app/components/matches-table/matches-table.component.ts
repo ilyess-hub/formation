@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatchService } from 'src/app/services/match.service';
 
 @Component({
   selector: 'app-matches-table',
@@ -8,28 +9,30 @@ import { Router } from '@angular/router';
 })
 export class MatchesTableComponent implements OnInit {
 matches : any;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private matchService : MatchService) { }
 
   ngOnInit() {
 
-    this.matches=[
+    
 
-      {id :1, scoreOne :1 , scoreTwo:3 , teamOne :"atk" , teamTwo :"atk" }, 
-      {id :3,scoreOne :1 , scoreTwo:3 , teamOne :"atk" , teamTwo :"atk" },
-      {id :3,scoreOne :1 , scoreTwo:3 , teamOne :"atk" , teamTwo :"atk" },
-      {id :4,scoreOne :1 , scoreTwo:3 , teamOne :"atk" , teamTwo :"atk" },
-    ]
+    this.matchService.getAllMatches().subscribe((data)=>{ 
+this.matches=data
+
+    });
+
+   
+
+
+    
   }
 
 goToDisplay(id :number){
-  alert("display matches")
 
   this.router.navigate([`matchInfo/${id}`]);
 }
 
 
 goToEdit(id :number){
-  alert("display matches")
 
   this.router.navigate([`editMatch/${id}`]);
 }

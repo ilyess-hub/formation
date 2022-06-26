@@ -6,17 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./matches.component.css']
 })
 export class MatchesComponent implements OnInit {
-  matches : any=[];
   constructor() { }
-
+matches: any
   ngOnInit() {
+  //  a importer dans fichier : matches
     this.matches=[
 
-
-      {scoreOne : 1 , scoreTwo: 3 , teamOne : "bhbjb", teamTwo:"hbhjb"},
-      {scoreOne : 2 , scoreTwo: 4 , teamOne : "bhbjb", teamTwo:"hbhjb"},
-      {scoreOne : 4 , scoreTwo: 4 , teamOne : "bhbjb", teamTwo:"hbhjb"},
-      {scoreOne : 4 , scoreTwo: 4 , teamOne : "bhbjb", teamTwo:"hbhjb"},
+      {id :1, scoreOne :1 , scoreTwo:3 , teamOne :"atk" , teamTwo :"atk" }, 
+      {id :3,scoreOne :1 , scoreTwo:3 , teamOne :"atk" , teamTwo :"atk" },
+      {id :3,scoreOne :1 , scoreTwo:3 , teamOne :"atk" , teamTwo :"atk" },
+      {id :4,scoreOne :1 , scoreTwo:3 , teamOne :"atk" , teamTwo :"atk" },
     ]
 
 

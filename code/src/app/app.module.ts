@@ -29,6 +29,9 @@ import { BannerComponent } from './components/banner/banner.component';
 import { AsterixPipe } from './pipes/asterix.pipe';
 import { MatchInfoComponent } from './components/match-info/match-info.component';
 import { UpdateMatchComponent } from './components/update-match/update-match.component';
+import { PlayerFormComponent } from './components/player-form/player-form.component';
+import { HttpClientModule } from "@angular/common/http";
+import { PlayerInfoComponent } from './components/player-info/player-info.component';
 
 @NgModule({
   declarations: [
@@ -57,13 +60,16 @@ import { UpdateMatchComponent } from './components/update-match/update-match.com
     BannerComponent,
     AsterixPipe,
     MatchInfoComponent,
-    UpdateMatchComponent
+    UpdateMatchComponent,
+    PlayerFormComponent,
+    PlayerInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

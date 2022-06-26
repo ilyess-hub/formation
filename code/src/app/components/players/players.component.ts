@@ -11,14 +11,7 @@ players : any=[];
   constructor() { }
 
   ngOnInit() {
-this.players=[
-  {playerName : "bhjbhjbh", position:"atk",nbr:10},
-  {playerName : "bhjbhjbh", position:"atk",nbr:10},
-  {playerName : "bhjbhjbh", position:"atk",nbr:10},
-  {playerName : "bhjbhjbh", position:"atk",nbr:10},
-  
 
-]
 
   }
 

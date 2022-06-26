@@ -1,3 +1,5 @@
+
+
 <table class="table">
 <tr>
     <th>id</th>
@@ -9,12 +11,12 @@
 </tr>
 <tr *ngFor="let p of players">
     <td>{{p.id}}</td>
-    <td>{{p.name}}</td>
+    <td>{{p.playerName}}</td>
     <td>{{p.position}}</td>
     <td>{{p.nbr}}</td>
     <td>
-        <button type="button" class="btn btn-info">Display</button>
-        <button type="button" class="btn btn-warnig">Edit</button>
+        <button type="button" class="btn btn-info" (click)="goToDisplay(p.id)">Display</button>
+        <button type="button" class="btn btn-warnig" (click)="goToEditPlayer(p.id)">Edit</button>
         <button type="button" class="btn btn-danger">Delete</button>
     </td>
 

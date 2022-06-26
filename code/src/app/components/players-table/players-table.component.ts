@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
   selector: 'app-players-table',
@@ -7,16 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayersTableComponent implements OnInit {
 players : any;
-  constructor() { }
+id: any;
+  constructor(private router : Router, private playerService : PlayerService) { }
 
   ngOnInit() {
-this.players =[
-{id :1 , name :"messi" , position :"atk" , nbr :10 },
-{id :2 , name :"ronaldo" , position :"dfs" , nbr : 10},
-{id : 3, name : "msekni", position :"dfs" , nbr :10 },
 
-]
+this.playerService.getAllplayeres().subscribe((data)=>{
+  this.players=data
+})
+
 
   }
 
+goToDisplay(id :number){
+  this.router.navigate([`playerInfo/${id}`])
 }
+
+
+  goToEditPlayer(id : any){
+    this.router.navigate([`editPlayer/${id}`])
+
+
+}}

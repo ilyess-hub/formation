@@ -23,6 +23,7 @@ export class SignupComponent implements OnInit {
 
   signup() {
     console.log("here signup ", this.signupForm.value);
+    
   }
 
 }

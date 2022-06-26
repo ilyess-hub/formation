@@ -11,19 +11,26 @@ import { MatchesComponent } from './components/matches/matches.component';
 import { PlayersComponent } from './components/players/players.component';
 import { MatchInfoComponent } from './components/match-info/match-info.component';
 import { UpdateMatchComponent } from './components/update-match/update-match.component';
+import { PlayerFormComponent } from './components/player-form/player-form.component';
+import { PlayerInfoComponent } from './components/player-info/player-info.component';
 
 const routes: Routes = [
   {path:"" , component : HomeComponent},
   {path : "login" , component: LoginComponent},
   {path : "signup" , component: SignupComponent},
   {path : "addMatch" , component: AddMatchComponent},
-  {path : "addPlayer" , component: AddPlayerComponent},
+  // {path : "addPlayer" , component: AddPlayerComponent},
   {path : "addTeam" , component: AddTeamComponent},
   {path : "admin" , component:AdminComponent},
   {path : "players" , component:PlayersComponent},
+  
   {path : "matches" , component:MatchesComponent},
   {path : "matchInfo/:id" , component:MatchInfoComponent},
   {path : "editMatch/:id" , component:UpdateMatchComponent},
+
+  {path : "addPlayer" , component:PlayerFormComponent},
+  {path : "editPlayer/:id" , component:PlayerFormComponent},
+  {path : "playerInfo/:id" , component:PlayerInfoComponent},
   
 
 

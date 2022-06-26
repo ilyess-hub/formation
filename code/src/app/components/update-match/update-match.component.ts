@@ -1,6 +1,7 @@
-  import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { MatchService } from 'src/app/services/match.service';
 
 @Component({
   selector: 'app-update-match',
@@ -8,36 +9,26 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./update-match.component.css']
 })
 export class UpdateMatchComponent implements OnInit {
-editForm : FormGroup
-match : any;
-id : any;
-matches: any;
+  editForm: FormGroup
+  match: any = {};
+  id: any;
+  matches: any = [];
 
-  constructor(private ar:ActivatedRoute) { }
+  constructor(private ar: ActivatedRoute , private matchServer:MatchService) { }
 
   ngOnInit() {
+   
+this.id=this.ar.snapshot.paramMap.get('id')
 
-    this.matches=[
-
-      {id :1, scoreOne :1 , scoreTwo:3 , teamOne :"atk" , teamTwo :"atk" }, 
-      {id :3,scoreOne :1 , scoreTwo:3 , teamOne :"atk" , teamTwo :"atk" },
-      {id :3,scoreOne :1 , scoreTwo:3 , teamOne :"atk" , teamTwo :"atk" },
-      {id :4,scoreOne :1 , scoreTwo:3 , teamOne :"atk" , teamTwo :"atk" },
-    ]
-
-    this.id=this.ar.snapshot.paramMap.get("id")
-    for (let i = 0; i < this.matches.length; i++) {
-      if (this.matches[i].id==this.id) {
-        this.match=this.matches[i]
-        break
-      }    
-        }
+   this.matchServer.getMatchById(this.id).subscribe((data)=>{
+    this.match=data
+   })
   }
 
 
 
-  edit(){
-alert('clicked')
+  edit() {
+
 
   }
 }

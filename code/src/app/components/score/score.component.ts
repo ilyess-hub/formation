@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./score.component.css']
 })
 export class ScoreComponent implements OnInit {
-@Input() match;
+@Input() match : any;
 //fils
   constructor() { }
 
